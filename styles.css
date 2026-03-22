@@ -499,3 +499,12 @@ a {
     width: 100%;
   }
 }
+  .nav__brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .nav__title {
+    font-size: 0.95rem;
+  }
