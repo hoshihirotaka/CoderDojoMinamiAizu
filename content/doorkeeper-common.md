@@ -109,6 +109,8 @@
 
 # お問い合わせ先
 メール：hitta.games@gmail.com
+電話番号は防犯のためWeb上には記載しておりません。チラシをご確認ください。
+（更新時期により記載されてないチラシがありご不便をおかけしてしまい申し訳ございません）
 
 運営：田島プログラミングクラブ  
 [星弘高](https://www.doorkeeper.jp/users/ggk1qdni313iwcoqy9xvedjbfl4ski)
