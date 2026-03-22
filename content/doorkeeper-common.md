@@ -103,6 +103,8 @@
 
 ※高校生向けのボランティア証明書が必要な場合はご相談ください。
 
+![Gemini_Generated_Image_jbp59ojbp59ojbp5.png](https://coderdojo-minamiaizu.doorkeeper.jp/files/2d28add12f51ad006af25b4302d9fcfa846589b9/Gemini_Generated_Image_jbp59ojbp59ojbp5.png)
+
 # お問い合わせ先
 メール：hitta.games@gmail.com
 
