@@ -55,6 +55,8 @@
 持ち物：ノートパソコン（お持ちの方）  
 ※貸出用PCは数に限りがあります。
 
+お友達とのご参加も歓迎しております。遠方の方もいらっしゃると思いますので、お友達とのご参加は送迎していただける親御さんと一緒であれば問題ありません。お申し込みの際に人数を含めていただき、お名前も記載してください。
+
 <img src="https://coderdojo-minamiaizu.doorkeeper.jp/files/f61f2fb2c0210f6025953719f72906bd9e7472ed/PXL_20251227_063933165.jpg" width="50%">
 <img src="https://coderdojo-minamiaizu.doorkeeper.jp/files/01a3bef26f1055c129a4dcf25720fac7fc08d3cb/PXL_20251227_063616170.jpg" width="50%">
 
