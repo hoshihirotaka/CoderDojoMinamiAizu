@@ -282,7 +282,7 @@ a {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .schedule__card {
@@ -290,6 +290,12 @@ a {
   padding: 28px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule__card .button {
+  margin-top: auto;
 }
 
 .schedule__date {
