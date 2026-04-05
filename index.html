@@ -29,15 +29,74 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "CoderDojo南会津（田島プログラミングクラブ）",
-        "url": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/",
-        "description": "非営利のコミュニティとして、南会津の子どもたちと一緒に“作る”時間を育てるCoderDojo南会津。メンターと地域の大人が並走し、失敗から学べる体験を届けます。",
-        "sameAs": [
-          "https://www.instagram.com/hirotaka_hoshi/",
-          "https://www.threads.com/@hirotaka_hoshi",
-          "https://www.facebook.com/hirotaka.hoshi",
-          "https://x.com/shgame"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization",
+            "name": "CoderDojo南会津（田島プログラミングクラブ）",
+            "url": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/",
+            "description": "非営利のコミュニティとして、南会津の子どもたちと一緒に“作る”時間を育てるCoderDojo南会津。メンターと地域の大人が並走し、失敗から学べる体験を届けます。",
+            "sameAs": [
+              "https://www.instagram.com/hirotaka_hoshi/",
+              "https://www.threads.com/@hirotaka_hoshi",
+              "https://www.facebook.com/hirotaka.hoshi",
+              "https://x.com/shgame"
+            ]
+          },
+          {
+            "@type": "Event",
+            "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#event-2026-05-24",
+            "name": "CoderDojo南会津 体験会（2026年5月24日）",
+            "startDate": "2026-05-24T13:30:00+09:00",
+            "endDate": "2026-05-24T16:00:00+09:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+              "@type": "Place",
+              "name": "南会津町役場本庁舎多目的ホール"
+            },
+            "image": [
+              "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/assets/hero.png"
+            ],
+            "description": "南会津の子どもたちと一緒に“作る”時間を育てる体験会です。参加費無料。",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "JPY",
+              "availability": "https://schema.org/InStock",
+              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196199"
+            },
+            "organizer": {
+              "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization"
+            }
+          },
+          {
+            "@type": "Event",
+            "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#event-2026-07-26",
+            "name": "CoderDojo南会津 体験会（2026年7月26日）",
+            "startDate": "2026-07-26T13:30:00+09:00",
+            "endDate": "2026-07-26T16:00:00+09:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+              "@type": "Place",
+              "name": "南会津町役場本庁舎多目的ホール"
+            },
+            "image": [
+              "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/assets/hero.png"
+            ],
+            "description": "南会津の子どもたちと一緒に“作る”時間を育てる体験会です。祇園祭のため会場が変更になる場合があります。参加費無料。",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "JPY",
+              "availability": "https://schema.org/InStock",
+              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196200"
+            },
+            "organizer": {
+              "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization"
+            }
+          }
         ]
       }
     </script>
