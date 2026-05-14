@@ -70,7 +70,7 @@ a {
   align-items: center;
   justify-content: space-between;
   max-width: var(--max);
-  margin: 0 auto 48px;
+  margin: 0 auto 24px;
   gap: 16px;
 }
 
@@ -134,26 +134,10 @@ a {
 
 .hero__actions {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
-  flex-wrap: wrap;
   margin-bottom: 28px;
-}
-
-.hero__meta {
-  display: grid;
-  gap: 12px;
-  font-size: 0.9rem;
-}
-
-.meta__label {
-  display: inline-block;
-  min-width: 72px;
-  font-weight: 700;
-  color: var(--teal);
-}
-
-.meta__value {
-  color: var(--muted);
 }
 
 .hero__visual {
