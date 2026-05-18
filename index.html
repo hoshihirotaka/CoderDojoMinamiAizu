@@ -70,7 +70,7 @@
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
               "validFrom": "2026-04-06T00:00:00+09:00",
-              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196199/tickets/new?utm_source=instagram&utm_medium=paid"
+              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196199/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo"
             },
             "organizer": {
               "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization"
@@ -106,7 +106,7 @@
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
               "validFrom": "2026-04-06T00:00:00+09:00",
-              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid"
+              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo"
             },
             "organizer": {
               "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization"
@@ -260,7 +260,7 @@
                 <li>持ち物：ノートパソコン（お持ちの方）</li>
                 <li>参加費：無料</li>
               </ul>
-              <a class="button button--primary" id="apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196199/tickets/new?utm_source=instagram&utm_medium=paid" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
+              <a class="button button--primary js-apply-button" id="apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196199/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
             </div>
             <div class="schedule__card">
               <h3>第5回CoderDojo 南会津</h3>
@@ -272,7 +272,7 @@
                 <li>持ち物：ノートパソコン（お持ちの方）</li>
                 <li>参加費：無料</li>
               </ul>
-              <a class="button button--primary" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
+              <a class="button button--primary js-apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
             </div>
             <div class="schedule__map">
               <img src="./assets/access-map.png" alt="多目的ホール道順" />
@@ -410,13 +410,15 @@
       <p class="footer__note">© 2026 Tajima Programming Club / CoderDojo Minamiaizu</p>
     </footer>
     <script>
-      const applyButton = document.getElementById("apply-button");
-      if (applyButton && typeof gtag === "function") {
-        applyButton.addEventListener("click", () => {
-          gtag("event", "apply_click", {
-            event_category: "engagement",
-            event_label: "doorkeeper_event",
-            value: 1,
+      const applyButtons = document.querySelectorAll(".js-apply-button");
+      if (applyButtons.length > 0 && typeof gtag === "function") {
+        applyButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            gtag("event", "apply_click", {
+              event_category: "engagement",
+              event_label: "doorkeeper_event",
+              value: 1,
+            });
           });
         });
       }
