@@ -2,8 +2,8 @@
   color-scheme: only light;
   --ink: #1b1b1b;
   --muted: #4a4f55;
-  --accent: #ea6a2f;
-  --accent-deep: #b64d1f;
+  --accent: #c8451b;
+  --accent-deep: #9c3d16;
   --accent-soft: #ffe5d4;
   --teal: #0f7a6e;
   --sky: #e5f2ef;
@@ -35,6 +35,12 @@ body {
 
 img {
   max-width: 100%;
+  display: block;
+  height: auto;
+  border-radius: inherit;
+}
+
+picture {
   display: block;
   border-radius: inherit;
 }
@@ -576,7 +582,7 @@ a {
   .nav__cta {
     width: 100%;
   }
-}
+
   .nav__brand {
     flex-direction: column;
     align-items: flex-start;
@@ -586,3 +592,4 @@ a {
   .nav__title {
     font-size: 0.95rem;
   }
+}

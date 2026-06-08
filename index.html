@@ -118,6 +118,7 @@
         ]
       }
     </script>
+    <link rel="preload" as="image" href="./assets/hero.webp" type="image/webp" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSETWZS3SZ"></script>
     <script>
@@ -155,7 +156,18 @@
         </div>
         <div class="hero__visual">
           <div class="hero__card">
-            <img src="./assets/hero.png" alt="南会津の子どもたちへ プログラミング体験会" />
+            <picture>
+              <source srcset="./assets/hero.webp" type="image/webp" />
+              <img
+                src="./assets/hero.png"
+                width="1000"
+                height="750"
+                alt="南会津の子どもたちへ プログラミング体験会"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div class="hero__badge">作ることに夢中になれる場所</div>
           <p class="hero__support">講師（チャンピオンと呼びます）は隣で一緒に考える仲間として伴走します。RobloxやAIの教材はチャンピオンが首都圏での教室で使用しているオリジナル教材を豊富に用意しています。</p>
@@ -188,8 +200,28 @@
               </div>
             </div>
             <div class="impact__media">
-              <img src="./assets/setup-1.jpg" alt="手作りで準備された機材" />
-              <img src="./assets/setup-2.jpg" alt="準備中の南会津の会場" />
+              <picture>
+                <source srcset="./assets/setup-1.webp" type="image/webp" />
+                <img
+                  src="./assets/setup-1.jpg"
+                  width="1200"
+                  height="901"
+                  alt="手作りで準備された機材"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./assets/setup-2.webp" type="image/webp" />
+                <img
+                  src="./assets/setup-2.jpg"
+                  width="1200"
+                  height="901"
+                  alt="準備中の南会津の会場"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -232,11 +264,31 @@
           </div>
           <div class="gallery">
             <figure>
-              <img src="./assets/gallery-1.jpg" alt="子どもたちの制作風景" />
+              <picture>
+                <source srcset="./assets/gallery-1.webp" type="image/webp" />
+                <img
+                  src="./assets/gallery-1.jpg"
+                  width="380"
+                  height="260"
+                  alt="子どもたちの制作風景"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <figcaption>手を動かしながら、作りたいものに挑戦。</figcaption>
             </figure>
             <figure>
-              <img src="./assets/gallery-2.jpg" alt="メンターと相談する時間" />
+              <picture>
+                <source srcset="./assets/gallery-2.webp" type="image/webp" />
+                <img
+                  src="./assets/gallery-2.jpg"
+                  width="380"
+                  height="260"
+                  alt="メンターと相談する時間"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <figcaption>メンターは横に座る仲間。答えを一緒に探します。</figcaption>
             </figure>
           </div>
@@ -275,7 +327,17 @@
               <a class="button button--primary js-apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
             </div>
             <div class="schedule__map">
-              <img src="./assets/access-map.png" alt="多目的ホール道順" />
+              <picture>
+                <source srcset="./assets/access-map.webp" type="image/webp" />
+                <img
+                  src="./assets/access-map.png"
+                  width="378"
+                  height="351"
+                  alt="多目的ホール道順"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <p class="note">会場までの道順はこちら。地域の施設で開催しています。</p>
             </div>
           </div>
@@ -357,7 +419,17 @@
         <div class="section__content">
           <div class="champion">
             <div class="champion__media">
-              <img src="assets/champion.png" alt="CoderDojoチャンピオン 星弘高" />
+              <picture>
+                <source srcset="assets/champion.webp" type="image/webp" />
+                <img
+                  src="assets/champion.png"
+                  width="720"
+                  height="616"
+                  alt="CoderDojoチャンピオン 星弘高"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div class="champion__body">
               <p class="eyebrow">CoderDojoチャンピオン</p>
@@ -377,16 +449,16 @@
                 <p class="champion__social-label">SNS</p>
                 <div class="social-icons">
                   <a class="social-link" href="https://www.instagram.com/hirotaka_hoshi/" target="_blank" rel="noreferrer" aria-label="Instagram">
-                    <img src="assets/icon-instagram.svg" alt="" />
+                    <img src="assets/icon-instagram.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
                   </a>
                   <a class="social-link" href="https://www.threads.com/@hirotaka_hoshi" target="_blank" rel="noreferrer" aria-label="Threads">
-                    <img src="assets/icon-threads.svg" alt="" />
+                    <img src="assets/icon-threads.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
                   </a>
                   <a class="social-link" href="https://www.facebook.com/hirotaka.hoshi" target="_blank" rel="noreferrer" aria-label="Facebook">
-                    <img src="assets/icon-facebook.svg" alt="" />
+                    <img src="assets/icon-facebook.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
                   </a>
                   <a class="social-link" href="https://x.com/shgame" target="_blank" rel="noreferrer" aria-label="X">
-                    <img src="assets/icon-x.svg" alt="" />
+                    <img src="assets/icon-x.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
                   </a>
                 </div>
               </div>
