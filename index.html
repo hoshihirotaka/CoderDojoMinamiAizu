@@ -118,17 +118,8 @@
         ]
       }
     </script>
-    <link rel="preload" as="image" href="./assets/hero.webp" type="image/webp" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSETWZS3SZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-DSETWZS3SZ");
-    </script>
+    <link rel="preload" as="image" href="./assets/hero-640.webp" type="image/webp" media="(max-width: 640px)" />
+    <link rel="preload" as="image" href="./assets/hero.webp" type="image/webp" media="(min-width: 641px)" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -157,7 +148,7 @@
         <div class="hero__visual">
           <div class="hero__card">
             <picture>
-              <source srcset="./assets/hero.webp" type="image/webp" />
+              <source srcset="./assets/hero-640.webp 640w, ./assets/hero.webp 1000w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 48vw, 520px" type="image/webp" />
               <img
                 src="./assets/hero.png"
                 width="1000"
@@ -482,18 +473,36 @@
       <p class="footer__note">© 2026 Tajima Programming Club / CoderDojo Minamiaizu</p>
     </footer>
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      window.addEventListener(
+        "load",
+        () => {
+          window.setTimeout(() => {
+            const script = document.createElement("script");
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-DSETWZS3SZ";
+            document.head.appendChild(script);
+            gtag("js", new Date());
+            gtag("config", "G-DSETWZS3SZ");
+          }, 0);
+        },
+        { once: true }
+      );
+
       const applyButtons = document.querySelectorAll(".js-apply-button");
-      if (applyButtons.length > 0 && typeof gtag === "function") {
-        applyButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            gtag("event", "apply_click", {
-              event_category: "engagement",
-              event_label: "doorkeeper_event",
-              value: 1,
-            });
+      applyButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          gtag("event", "apply_click", {
+            event_category: "engagement",
+            event_label: "doorkeeper_event",
+            value: 1,
           });
         });
-      }
+      });
     </script>
   </body>
 </html>
