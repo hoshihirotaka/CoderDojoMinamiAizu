@@ -231,7 +231,7 @@ a {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
 }
 
@@ -256,8 +256,54 @@ a {
   background: #f4faf8;
 }
 
+.section--purpose {
+  background: #ffffff;
+}
+
 .section--voices {
   background: linear-gradient(180deg, #fffdf9 0%, #f7f0e5 100%);
+}
+
+.purpose-list {
+  counter-reset: purpose;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.purpose-item {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 30, 25, 0.08);
+  position: relative;
+}
+
+.purpose-item::before {
+  counter-increment: purpose;
+  content: counter(purpose);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.purpose-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.purpose-item p {
+  color: var(--muted);
 }
 
 .gallery {
@@ -632,7 +678,8 @@ a {
 
   .cards,
   .gallery,
-  .quote-grid {
+  .quote-grid,
+  .purpose-list {
     grid-template-columns: 1fr;
   }
 
