@@ -256,6 +256,10 @@ a {
   background: #f4faf8;
 }
 
+.section--voices {
+  background: linear-gradient(180deg, #fffdf9 0%, #f7f0e5 100%);
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -273,6 +277,79 @@ a {
   margin-top: 12px;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.voices__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.voices__summary,
+.voices__quotes {
+  display: grid;
+  gap: 16px;
+}
+
+.voices__summary-copy h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.voices__summary-copy p {
+  color: var(--muted);
+}
+
+.voices__stats {
+  display: grid;
+  gap: 16px;
+}
+
+.voice-stat {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 30, 25, 0.08);
+}
+
+.voice-stat__value {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent-deep);
+  margin-bottom: 8px;
+}
+
+.voice-stat__label {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.quote-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 30, 25, 0.08);
+}
+
+.quote-card p {
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.quote-card footer {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .section--schedule {
@@ -548,12 +625,14 @@ a {
   .impact__grid,
   .schedule,
   .community__grid,
-  .champion {
+  .champion,
+  .voices__grid {
     grid-template-columns: 1fr;
   }
 
   .cards,
-  .gallery {
+  .gallery,
+  .quote-grid {
     grid-template-columns: 1fr;
   }
 
