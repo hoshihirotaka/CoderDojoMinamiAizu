@@ -10,6 +10,8 @@ CoderDojoは子どものためのプログラミング道場です。2011年に�
 ## 田島プログラミングクラブとは
 田島プログラミングクラブは、福島県南会津町で活動する子ども向けプログラミングクラブです。「CoderDojo南会津」の運営を目的に活動しています。地域の子どもたちにプログラミングの楽しさを伝え、創造性を育む場を提供することが私たちの使命です。
 
+[教室の様子・主催者の紹介は公式サイトへ](https://hoshihirotaka.github.io/CoderDojoMinamiAizu/?utm_source=doorkeeper&utm_medium=community&utm_campaign=coderdojo)
+
 [田島プログラミングクラブの過去の実績](https://14ac3f926acdcfc8fc2c32208b.doorkeeper.jp/events/past)
 
 ## 活動理念

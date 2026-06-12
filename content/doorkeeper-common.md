@@ -114,6 +114,8 @@
 活動報告などはnoteにまとめています。  
 [noteはこちら](https://note.com/shgame/magazines)
 
+[教室の様子・主催者の紹介は公式サイトへ](https://hoshihirotaka.github.io/CoderDojoMinamiAizu/?utm_source=doorkeeper&utm_medium=event&utm_campaign=coderdojo)
+
 <img src="https://gameschool.doorkeeper.jp/files/80b2a904f22fc8a6a81e4f9c3c351165f8367b85/%E3%83%95%E3%82%9A%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E5%86%99%E7%9C%9F.png" width="50%">
 
 **ゲーム会社で20年ゲーム制作をしてきた経験を、子どもたちにもわかる形で伝えています。**
