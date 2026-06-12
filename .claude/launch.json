@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lp",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", ".", "-p", "4173"],
+      "port": 4173
+    }
+  ]
+}

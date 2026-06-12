@@ -45,10 +45,10 @@
           },
           {
             "@type": "Event",
-            "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#event-2026-05-24",
+            "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#event-2026-06-28",
             "name": "第5回CoderDojo 南会津（2026年6月28日）",
-            "startDate": "2026-05-24T13:30:00+09:00",
-            "endDate": "2026-05-24T16:00:00+09:00",
+            "startDate": "2026-06-28T13:30:00+09:00",
+            "endDate": "2026-06-28T16:00:00+09:00",
             "eventStatus": "https://schema.org/EventScheduled",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "location": {
@@ -70,7 +70,7 @@
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
               "validFrom": "2026-04-06T00:00:00+09:00",
-              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/197553/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo"
+              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/197553?utm_source=lp&utm_medium=referral&utm_campaign=coderdojo"
             },
             "organizer": {
               "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization"
@@ -82,7 +82,7 @@
           {
             "@type": "Event",
             "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#event-2026-07-26",
-            "name": "第6回（旧5回）CoderDojo 南会津（2026年7月26日）",
+            "name": "第6回CoderDojo 南会津（2026年7月26日）",
             "startDate": "2026-07-26T13:30:00+09:00",
             "endDate": "2026-07-26T16:00:00+09:00",
             "eventStatus": "https://schema.org/EventScheduled",
@@ -106,7 +106,7 @@
               "priceCurrency": "JPY",
               "availability": "https://schema.org/InStock",
               "validFrom": "2026-04-06T00:00:00+09:00",
-              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo"
+              "url": "https://coderdojo-minamiaizu.doorkeeper.jp/events/196200?utm_source=lp&utm_medium=referral&utm_campaign=coderdojo"
             },
             "organizer": {
               "@id": "https://hoshihirotaka.github.io/CoderDojoMinamiAizu/#organization"
@@ -123,13 +123,22 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <nav class="nav">
-        <div class="nav__brand">
-          <span class="nav__badge">CoderDojo 南会津</span>
-        </div>
-      </nav>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="#top">CoderDojo 南会津</a>
+        <nav class="site-nav" aria-label="ページ内ナビゲーション">
+          <a href="#about">活動について</a>
+          <a href="#purpose">参加する意義</a>
+          <a href="#gallery">教室の様子</a>
+          <a href="#voices">参加者の声</a>
+          <a href="#champion">主催者</a>
+          <a class="site-nav__cta" href="#schedule">開催予定</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
 
+    <section class="hero" id="top">
       <div class="hero__grid">
         <div class="hero__copy">
           <p class="eyebrow">小学1年生〜高校3年生/参加費無料</p>
@@ -142,7 +151,7 @@
           <div class="hero__actions">
             <a class="button button--primary" href="#schedule">次回の開催情報を見る</a>
             <a class="button button--ghost" href="#join">すぐに参加はできないが興味はある</a>
-            <a class="button button--outline" href="#story">体験会の風景</a>
+            <a class="button button--outline" href="#gallery">体験会の風景</a>
           </div>
         </div>
         <div class="hero__visual">
@@ -164,22 +173,22 @@
           <p class="hero__support">講師（チャンピオンと呼びます）は隣で一緒に考える仲間として伴走します。RobloxやAIの教材はチャンピオンが首都圏での教室で使用しているオリジナル教材を豊富に用意しています。</p>
         </div>
       </div>
-    </header>
+    </section>
 
     <main>
-      <section class="section section--impact" id="story">
+      <section class="section section--impact" id="about">
         <div class="section__content">
           <div class="section__title">
-            <p class="eyebrow">Discovery / Engage</p>
-            <h2>体験会はこんな時間です</h2>
+            <p class="eyebrow">About</p>
+            <h2>活動について</h2>
           </div>
           <div class="impact__grid">
             <div class="impact__copy">
               <p>
-                「作ってみたい」を起点に、手を動かしながら学びを深める体験会です。受動的な学びではなく、自分のペースで進める時間を大切にします。田島 プログラミングクラブとして、地域の学びをゆっくり育てています。
+                「このゲームを作りたい」を起点に、RobloxやAIを使って手を動かしながら学ぶ体験会です。受動的な学びではなく、自分のペースで進める時間を大切にします。田島プログラミングクラブとして、地域の学びをゆっくり育てています。
               </p>
               <p>
-                失敗しても大丈夫。ぶつかってみて初めてわかる感覚こそが、次の一歩をつくります。地域の大人が、子どもたちの挑戦をそっと支える。そんな温かさが、南会津のDojoの原動力です。
+                メンターは教える人ではなく、隣で一緒に試す仲間。失敗しても大丈夫、ぶつかってみて初めてわかる感覚こそが、次の一歩をつくります。ゲーム業界の実務経験をもとに、企画から改善までの考え方もわかりやすく伝えます。
               </p>
               <p>
                 他の地域とは違い、広域な地域です。お友達の親御さんやおじいちゃん、おばあちゃんのご送迎もありがたい地域活動と感じております。
@@ -214,35 +223,6 @@
                 />
               </picture>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--values" id="philosophy">
-        <div class="section__content">
-          <div class="section__title">
-            <p class="eyebrow">Core Philosophy</p>
-            <h2>自分のペースで試してみる</h2>
-          </div>
-          <div class="cards">
-            <article class="card">
-              <h3>ゲーム制作を起点に</h3>
-              <p>
-                RobloxやAIを使いながら、「このゲームを作りたい」から始めます。
-              </p>
-            </article>
-            <article class="card">
-              <h3>挑戦を応援する場</h3>
-              <p>
-                メンターは教える人ではなく、隣で一緒に試す人。うまくいかなくても前に進めます。
-              </p>
-            </article>
-            <article class="card">
-              <h3>プロの視点で学べる</h3>
-              <p>
-                ゲーム業界の実務経験をもとに、企画から改善までの考え方をわかりやすく伝えます。
-              </p>
-            </article>
           </div>
         </div>
       </section>
@@ -306,6 +286,10 @@
               <figcaption>メンターは横に座る仲間。答えを一緒に探します。</figcaption>
             </figure>
           </div>
+          <p class="gallery__note">
+            毎回の活動の様子は、noteで報告しています。
+            <a href="https://note.com/shgame/m/m86c257df6068?utm_source=lp&utm_medium=referral" target="_blank" rel="noreferrer">noteで活動報告を読む</a>
+          </p>
         </div>
       </section>
 
@@ -364,6 +348,71 @@
         </div>
       </section>
 
+      <section class="section section--champion" id="champion">
+        <div class="section__content">
+          <div class="champion">
+            <div class="champion__media">
+              <picture>
+                <source srcset="assets/champion-360.webp 360w, assets/champion.webp 720w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 48vw, 420px" type="image/webp" />
+                <img
+                  src="assets/champion.png"
+                  width="720"
+                  height="616"
+                  alt="CoderDojoチャンピオン 星弘高"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+            <div class="champion__body">
+              <p class="eyebrow">CoderDojoチャンピオン</p>
+              <h2>星 弘高</h2>
+              <h3>なぜ南会津で、無料でやるのか</h3>
+              <p class="champion__story">
+                私は南会津町（旧田島町）の高野で生まれ育ちました。子どもの頃、パソコンに興味はありましたが、触れる機会はほとんどありませんでした。いつだったか、学校にあったパソコンのペイントで絵を描いて、周りに褒められたことを今でも覚えています。
+              </p>
+              <p class="champion__story">
+                ゲーム制作に出会ったのは、地元を離れてからのことです。それから20年あまり、企画職としてコンシューマーからスマホゲームまで作ってきました。
+              </p>
+              <p class="champion__story">
+                子どもの頃には想像もつかなかった「ゲームを作れる場所」を、今なら地元に作れます。さいたま市で運営している有料教室の教材と時間を、南会津では無料で開いているのは、そういう理由です。
+              </p>
+              <p class="champion__story">
+                地元に住みながら、作る楽しさで世界とつながれること。それを体験してもらえたら嬉しいです。
+              </p>
+              <h3>自己紹介</h3>
+              <ul class="list">
+                <li>ゲーム企画職全般。ゲーム業界歴20年近く。</li>
+                <li>コンソールからスマホゲームの開発と運営に携わる。</li>
+                <li>フリーランスとして活動中。</li>
+                <li>現在はブロマス（ゲームクリエイター教室）も運営。</li>
+              </ul>
+              <p class="champion__note">
+                活動報告などはnoteにまとめています。
+                <a href="https://note.com/shgame/m/m86c257df6068" target="_blank" rel="noreferrer">noteはこちら</a>
+              </p>
+              <div class="champion__social">
+                <p class="champion__social-label">SNS</p>
+                <div class="social-icons">
+                  <a class="social-link" href="https://www.instagram.com/hirotaka_hoshi/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                    <img src="assets/icon-instagram.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
+                  </a>
+                  <a class="social-link" href="https://www.threads.com/@hirotaka_hoshi" target="_blank" rel="noreferrer" aria-label="Threads">
+                    <img src="assets/icon-threads.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
+                  </a>
+                  <a class="social-link" href="https://www.facebook.com/hirotaka.hoshi" target="_blank" rel="noreferrer" aria-label="Facebook">
+                    <img src="assets/icon-facebook.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
+                  </a>
+                  <a class="social-link" href="https://x.com/shgame" target="_blank" rel="noreferrer" aria-label="X">
+                    <img src="assets/icon-x.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section section--schedule" id="schedule">
         <div class="section__content">
           <div class="section__title">
@@ -381,10 +430,10 @@
                 <li>持ち物：ノートパソコン（お持ちの方）</li>
                 <li>参加費：無料</li>
               </ul>
-              <a class="button button--primary js-apply-button" id="apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/197553/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
+              <a class="button button--primary js-apply-button" id="apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/197553?utm_source=lp&utm_medium=referral&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
             </div>
             <div class="schedule__card">
-              <h3>第6回（旧5回）CoderDojo 南会津</h3>
+              <h3>第6回CoderDojo 南会津</h3>
               <p class="schedule__date">2026年7月26日（日） 13:30〜16:00</p>
               <ul class="list">
                 <li>会場：南会津町役場本庁舎多目的ホール（祇園祭のため場所が変更する場合があります）</li>
@@ -393,7 +442,7 @@
                 <li>持ち物：ノートパソコン（お持ちの方）</li>
                 <li>参加費：無料</li>
               </ul>
-              <a class="button button--primary js-apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196200/tickets/new?utm_source=instagram&utm_medium=paid&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
+              <a class="button button--primary js-apply-button" href="https://coderdojo-minamiaizu.doorkeeper.jp/events/196200?utm_source=lp&utm_medium=referral&utm_campaign=coderdojo" target="_blank" rel="noreferrer">Doorkeeperで申し込む</a>
             </div>
             <div class="schedule__map">
               <picture>
@@ -441,10 +490,6 @@
                 <p>機材はCoderDojoとチャンピオンによる寄付で準備しています。地域の施設の協力で成り立っています。</p>
               </div>
               <div class="panel__item">
-                <h4>失敗しても大丈夫</h4>
-                <p>ぶつかってみて初めてわかる。そんな瞬間を、地域の大人がそっと支えます。</p>
-              </div>
-              <div class="panel__item">
                 <h4>未来のクリエイターへ</h4>
                 <p>ただのゲーム遊びから、世界へ届けるクリエイターへ。南会津からの挑戦を育てます。</p>
               </div>
@@ -461,6 +506,10 @@
           </div>
           <div class="faq">
             <details open>
+              <summary>なぜ無料なんですか？</summary>
+              <p>CoderDojoは世界中で展開されている非営利のプログラミング道場で、南会津もそのひとつです。運営者（チャンピオン）は南会津町出身。首都圏で有料のゲームクリエイター教室を営んでおり、その教材と経験を地元への恩返しとして無料で提供しています。機材は寄付、会場は地域のご協力で成り立っています。こちらから有料サービスの営業や勧誘を行うことはありません。</p>
+            </details>
+            <details>
               <summary>パソコンを持っていなくても参加できますか？</summary>
               <p>はい。貸出用の機材があります。台数に限りがあるため、Doorkeeperの登録時にお知らせください。</p>
             </details>
@@ -484,57 +533,6 @@
         </div>
       </section>
 
-      <section class="section section--champion" id="champion">
-        <div class="section__content">
-          <div class="champion">
-            <div class="champion__media">
-              <picture>
-                <source srcset="assets/champion-360.webp 360w, assets/champion.webp 720w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 48vw, 420px" type="image/webp" />
-                <img
-                  src="assets/champion.png"
-                  width="720"
-                  height="616"
-                  alt="CoderDojoチャンピオン 星弘高"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </div>
-            <div class="champion__body">
-              <p class="eyebrow">CoderDojoチャンピオン</p>
-              <h2>星 弘高</h2>
-              <h3>自己紹介</h3>
-              <ul class="list">
-                <li>ゲーム企画職全般。ゲーム業界歴20年近く。</li>
-                <li>コンソールからスマホゲームの開発と運営に携わる。</li>
-                <li>フリーランスとして活動中。</li>
-                <li>現在はブロマス（ゲームクリエイター教室）も運営。</li>
-              </ul>
-              <p class="champion__note">
-                活動報告などはnoteにまとめています。
-                <a href="https://note.com/shgame/m/m86c257df6068" target="_blank" rel="noreferrer">noteはこちら</a>
-              </p>
-              <div class="champion__social">
-                <p class="champion__social-label">SNS</p>
-                <div class="social-icons">
-                  <a class="social-link" href="https://www.instagram.com/hirotaka_hoshi/" target="_blank" rel="noreferrer" aria-label="Instagram">
-                    <img src="assets/icon-instagram.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
-                  </a>
-                  <a class="social-link" href="https://www.threads.com/@hirotaka_hoshi" target="_blank" rel="noreferrer" aria-label="Threads">
-                    <img src="assets/icon-threads.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
-                  </a>
-                  <a class="social-link" href="https://www.facebook.com/hirotaka.hoshi" target="_blank" rel="noreferrer" aria-label="Facebook">
-                    <img src="assets/icon-facebook.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
-                  </a>
-                  <a class="social-link" href="https://x.com/shgame" target="_blank" rel="noreferrer" aria-label="X">
-                    <img src="assets/icon-x.svg" width="20" height="20" alt="" loading="lazy" decoding="async" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -546,6 +544,7 @@
         <div>
           <p class="footer__label">参加・最新情報</p>
           <a class="footer__link" href="https://coderdojo-minamiaizu.doorkeeper.jp/" target="_blank" rel="noreferrer">Doorkeeperページ</a>
+          <a class="footer__link" href="https://note.com/shgame/m/m86c257df6068" target="_blank" rel="noreferrer">note活動報告</a>
         </div>
       </div>
       <p class="footer__note">© 2026 Tajima Programming Club / CoderDojo Minamiaizu</p>

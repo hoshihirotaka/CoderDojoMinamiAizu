@@ -104,7 +104,7 @@
 （更新時期により記載されてないチラシがありご不便をおかけしてしまい申し訳ございません）
 
 運営：田島プログラミングクラブ  
-[星弘高](https://www.doorkeeper.jp/users/ggk1qdni313iwcoqy9xvedjbfl4ski)
+[星弘高](https://www.doorkeeper.jp/users/cgio9cfjirdrnmll8lnipvpa8byr9)
 
 自己紹介  
 ゲーム企画職全般。ゲーム業界歴20年近く。  

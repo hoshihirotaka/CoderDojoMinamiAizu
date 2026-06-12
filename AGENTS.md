@@ -20,8 +20,10 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
 - よくある質問（LP側）と本文（Doorkeeper側）の矛盾
 
 ### 申込みリンク
-- イベントページ（申込み直リンク）
-  - `https://coderdojo-minamiaizu.doorkeeper.jp/events/194649`
+- イベントページ直リンクを使う（`/tickets/new` は付けない）
+  - 第5回（2026-06-28）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/197553`
+  - 第6回（2026-07-26）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/196200`
+- LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - プロフィール/一覧ページ
   - `https://coderdojo-minamiaizu.doorkeeper.jp/`
 
