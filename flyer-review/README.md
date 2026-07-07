@@ -9,11 +9,13 @@
 - PNG/PDFをこのフォルダに置く → 提案を `proposals.md` に追記する → 確認後、画像と`proposals.md`は削除（個人情報保護のため）。
 - GitHubへは原則push しない。
 
-### 2. 告知文（開催前）
+### 2. 告知文（開催前）→ `01開催告知/`
 イベント告知の文面。媒体ごとに**読者が違う**ため、同じ情報でも書き方を変える。
+同じ回の告知（Instagram/DM/LINE）はこのフォルダにまとめて入れることで、その回の告知セットを一気に作れるようにする。
 
-### 3. 報告文（開催後）
+### 3. 報告文（開催後）→ `02終了お知らせ/`
 開催した回の様子を振り返る文面（X投稿、note活動報告など）。参加を迷っている人への安心材料にもなるため、基本は前向き・具体的なエピソード中心。
+フォルダ分けの基準は**内容**。「告知」か「報告」かで振り分け、ファイル名も内容に合わせて`-post`（告知）/`-report`（報告）を使い分ける。
 
 ---
 
@@ -36,9 +38,21 @@
 
 ---
 
+## フォルダ構成
+```
+flyer-review/
+├── 01開催告知/       … 開催前の告知文（Instagram / Doorkeeper DM / LINE）
+├── 02終了お知らせ/   … 開催後の報告文（X / note 活動報告）
+├── README.md
+├── proposals.md            … チラシ画像レビューの提案
+├── *-copy-short-set.md     … チラシ文言たたき台（日付なし・随時更新）
+└── (チラシ画像・PDF)       … レビュー後は削除
+```
+
 ## ファイル命名規則
-- 告知文: `doorkeeper-dm-YYYY-MM-DD.md` / `line-group-message-YYYY-MM-DD.md` / `instagram-post-YYYY-MM-DD.md`
-- 報告文: `x-post-{回数}-YYYY-MM-DD.md` / `note-report-{回数}-YYYY-MM-DD.md`
+- 告知文（`01開催告知/`）: `doorkeeper-dm-YYYY-MM-DD.md` / `line-group-message-YYYY-MM-DD.md` / `instagram-post-YYYY-MM-DD.md`
+- 報告文（`02終了お知らせ/`）: `{媒体}-report-{回数}-YYYY-MM-DD.md`（例: `x-report-5th-2026-06-28.md` / `note-report-5th-2026-06-28.md` / `instagram-report-5th-2026-06-28.md`）
+  - 告知文は`-post`系、報告文は`-report`系で統一し、フォルダを見ずにファイル名だけでも告知/報告の区別がつくようにする。
 - チラシ文言たたき台: `*-copy-short-set.md`
 - 日付は開催日（複数イベントをまとめて告知する場合は `YYYY-MM-DD-YYYY-MM-DD`）
 
