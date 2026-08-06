@@ -455,6 +455,36 @@ a {
   margin: 12px 0 16px;
 }
 
+.schedule__card--cancelled {
+  background: #f5f3ef;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge--cancelled {
+  background: rgba(27, 27, 27, 0.08);
+  color: var(--muted);
+}
+
+.schedule__date--cancelled {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(74, 79, 85, 0.5);
+}
+
+.schedule__cancel-note {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
 .schedule__map {
   background: var(--card);
   padding: 18px;
