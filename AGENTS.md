@@ -30,8 +30,12 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - `https://coderdojo-minamiaizu.doorkeeper.jp/`
 
 ### LPでの計測
-- GA4: `G-DSETWZS3SZ`
-- 申込みボタンのクリック計測: `apply_click`（`#apply-button`）
+- GA4: `G-DSETWZS3SZ`（`<head>` で通常のasync読み込み。**遅延ロードに戻さないこと**。2026-08-20に戻した経緯は `HANDOFF-2026-08-20.md`）
+- ページ内ナビのクリック計測: `nav_click`（`.site-nav a`／パラメータ `section` に遷移先アンカー名）
+  - `section` は**GA4管理画面でカスタムディメンションに登録しないとレポートに出ない**（DebugView・リアルタイムでは登録前でも見える）
+- 申込みボタンのクリック計測: `apply_click`（`.js-apply-button`）
+  - **2026-08-06以降、対象要素がHTMLに無いため発火していない。** 次回開催の申込みボタンに `js-apply-button` を付けて復活させる。**イベント名は変えないこと**（過去データとの連続性）
+- 広告: Google広告は使わない方針（`AW-` タグを入れない）。**Meta広告は出稿予定だがピクセル未導入**（出稿前に対応が必要）
 
 ## 3. チラシ運用方針（Canva）
 Canva本体は編集できないため、**レビュー・提案のみ**を行う。

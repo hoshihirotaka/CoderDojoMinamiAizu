@@ -526,6 +526,19 @@
           });
         });
       });
+
+      // ページ内ナビのクリック計測。
+      // 外部リンク（Doorkeeper・note）とスクロールはGA4の拡張計測が自動で拾うが、
+      // 同一ページのアンカーは自動では残らない。どのセクションに関心があるか
+      // （特に「主催者」を読みに行くか）を見るために明示的に送っている。
+      const navLinks = document.querySelectorAll(".site-nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          gtag("event", "nav_click", {
+            section: link.getAttribute("href").replace("#", ""),
+          });
+        });
+      });
     </script>
   </body>
 </html>
