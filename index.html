@@ -85,6 +85,20 @@
     <link rel="preload" as="image" href="./assets/hero-480.webp" type="image/webp" media="(max-width: 640px)" />
     <link rel="preload" as="image" href="./assets/hero.webp" type="image/webp" media="(min-width: 641px)" />
     <link rel="stylesheet" href="./styles.css" />
+    <!-- Google tag (gtag.js) — GA4を即時読み込み
+         以前は window.load 後に読み込んでいたが、全画像の読み込み完了を待つため
+         モバイルで数秒遅れ、早期離脱がまるごと計測から漏れていた。エンゲージメント時間も
+         実態より短く出る。計測の起点を早めるため、通常のasync読み込みに戻している。
+         ※Google広告のタグ（AW-）は入れない。CoderDojoには広告アカウントが無い。 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSETWZS3SZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DSETWZS3SZ");
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -502,37 +516,6 @@
       <p class="footer__note">© 2026 Tajima Programming Club / CoderDojo Minamiaizu</p>
     </footer>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      let analyticsLoaded = false;
-      const loadAnalytics = () => {
-        if (analyticsLoaded) {
-          return;
-        }
-        analyticsLoaded = true;
-        const script = document.createElement("script");
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-DSETWZS3SZ";
-        document.head.appendChild(script);
-        gtag("js", new Date());
-        gtag("config", "G-DSETWZS3SZ");
-      };
-
-      window.addEventListener("load", () => {
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(loadAnalytics, { timeout: 8000 });
-          return;
-        }
-        window.setTimeout(loadAnalytics, 8000);
-      }, { once: true });
-
-      ["pointerdown", "scroll", "keydown", "touchstart"].forEach((eventName) => {
-        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
-      });
-
       const applyButtons = document.querySelectorAll(".js-apply-button");
       applyButtons.forEach((button) => {
         button.addEventListener("click", () => {
