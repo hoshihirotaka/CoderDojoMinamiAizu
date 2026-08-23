@@ -455,6 +455,8 @@ a {
   margin: 12px 0 16px;
 }
 
+/* 開催中止のときに使う表示。
+   使っていない期間があっても消さないこと（2026-08-16の中止で実際に使用）。 */
 .schedule__card--cancelled {
   background: #f5f3ef;
 }

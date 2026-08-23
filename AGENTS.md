@@ -23,7 +23,8 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
 - イベントページ直リンクを使う（`/tickets/new` は付けない）
   - 第5回（2026-06-28）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/197553`
   - 第6回（2026-07-26）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/196200`
-  - 第7回（2026-08-16）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/198352`（**中止**。送り盆と重なるため。LPは開催予定カードを中止表示に差し替え済み、次回日程は未定）
+  - ~~第7回（2026-08-16）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/198352`~~（**中止**。送り盆と重なるため）
+  - 第7回（2026-09-27）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199000`（中止分を振り替え。回数は第7回のまま）
 - LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - DoorkeeperからLP（公式サイト）へのリンクは `utm_source=doorkeeper` ＋ 置き場所別のmedium（イベント本文: `utm_medium=event` / コミュニティ説明: `utm_medium=community`）＋ `utm_campaign=coderdojo`。テキストリンクのみ（バナーにしない）。アンカーテキストは「教室の様子・主催者の紹介は公式サイトへ」のように行き先の内容を書く
 - プロフィール/一覧ページ
@@ -34,7 +35,11 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
 - ページ内ナビのクリック計測: `nav_click`（`.site-nav a`／パラメータ `section` に遷移先アンカー名）
   - `section` は**GA4管理画面でカスタムディメンションに登録しないとレポートに出ない**（DebugView・リアルタイムでは登録前でも見える）
 - 申込みボタンのクリック計測: `apply_click`（`.js-apply-button`）
-  - **2026-08-06以降、対象要素がHTMLに無いため発火していない。** 次回開催の申込みボタンに `js-apply-button` を付けて復活させる。**イベント名は変えないこと**（過去データとの連続性）
+  - **イベント名は変えないこと**（過去データとの連続性）
+  - ⚠️ **開催情報を差し替えるときは、申込みボタンに `js-apply-button` を付け直すこと。** 2026-08-06に中止対応でクラスごと外し、8/24まで発火していなかった。クラスが無いとリスナーが1つも付かず、レポート上は「申込0件」と区別が付かない
+- ナビ以外のボタンのクリック計測: `button_click`（`[data-track]`／パラメータ `button` に識別子）
+  - 現在の対象: `hero_schedule` / `hero_join` / `hero_gallery` / `community_register`
+  - 追加したいボタンには `data-track` 属性に識別子を入れるだけでよい
 - 広告: Google広告は使わない方針（`AW-` タグを入れない）。**Meta広告は出稿予定だがピクセル未導入**（出稿前に対応が必要）
 
 ## 3. チラシ運用方針（Canva）
