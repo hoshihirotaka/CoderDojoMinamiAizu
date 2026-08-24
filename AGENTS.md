@@ -40,6 +40,9 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
 - ナビ以外のボタンのクリック計測: `button_click`（`[data-track]`／パラメータ `button` に識別子）
   - 現在の対象: `hero_schedule` / `hero_join` / `hero_gallery` / `community_register`
   - 追加したいボタンには `data-track` 属性に識別子を入れるだけでよい
+- Doorkeeper側の申込完了計測: `signup_complete`（**Doorkeeper側のプロパティ**／測定ID `G-BWCXQ6HMN7`）
+  - GA4の「イベントを作成」で生成。条件は `event_name` = `page_view` かつ `page_location` が正規表現 `/tickets/[^/]+/completed` に一致
+  - **ページビュー基準**なので完了ページの再読み込みでも加算される。**申込の実数はDoorkeeperの管理画面が正**。GA4で見るのは流入元別の内訳
 - 広告: Google広告は使わない方針（`AW-` タグを入れない）。**Meta広告は出稿予定だがピクセル未導入**（出稿前に対応が必要）
 
 ## 3. チラシ運用方針（Canva）
