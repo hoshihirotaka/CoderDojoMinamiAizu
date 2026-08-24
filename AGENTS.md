@@ -30,6 +30,15 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
 - **開催は隔月程度のペース。** 2026年10月は会場と運営の都合により開催しない（意図的な判断であり、日程の漏れではない）
 - LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - DoorkeeperからLP（公式サイト）へのリンクは `utm_source=doorkeeper` ＋ 置き場所別のmedium（イベント本文: `utm_medium=event` / コミュニティ説明: `utm_medium=community`）＋ `utm_campaign=coderdojo`。テキストリンクのみ（バナーにしない）。アンカーテキストは「教室の様子・主催者の紹介は公式サイトへ」のように行き先の内容を書く
+- **チラシ（紙）からのリンクに付けるutm**: `utm_source=flyer&utm_medium=print&utm_campaign=coderdojo`
+  - ⚠️ **QRコードに埋め込むURLに付ける。印刷後は直せない。** チラシを作るたびに、QR生成前に必ず確認すること
+  - チラシに文字でもURLを載せる場合、そちらは**utm無しの短いURL**にする（手打ち用。計測は諦める）
+  - 配布先（学校／お店）でのutmの出し分けは**現時点では行わない**（2026-08-24判断。まずは付け忘れないことを優先）
+  - **QRの飛び先はイベント個別ページではなく固定URLにする。** チラシは頻繁に刷れないため、1回のイベントで使い捨てにならないようにする
+  - **未公開のイベントページをQRにしないこと。** 第8回（`events/199001`）は2026-08-24時点で404を返す（公開されるまで読み取った人がエラーになる）
+  - 発行済みURL（そのままQRにできる。2026-08-24時点でいずれも200を確認）
+    - 公式サイト（**推奨**）: `https://hoshihirotaka.github.io/CoderDojoMinamiAizu/?utm_source=flyer&utm_medium=print&utm_campaign=coderdojo`
+    - Doorkeeperトップ: `https://coderdojo-minamiaizu.doorkeeper.jp/?utm_source=flyer&utm_medium=print&utm_campaign=coderdojo`
 - プロフィール/一覧ページ
   - `https://coderdojo-minamiaizu.doorkeeper.jp/`
 
