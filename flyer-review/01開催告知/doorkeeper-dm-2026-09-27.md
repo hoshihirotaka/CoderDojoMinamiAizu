@@ -36,6 +36,8 @@ RobloxやAIなど、その子のやってみたいことに合わせて一緒に
 教室の様子・主催者の紹介は公式サイトへ
 https://hoshihirotaka.github.io/CoderDojoMinamiAizu/?utm_source=doorkeeper&utm_medium=dm&utm_campaign=coderdojo
 
+なお次回（第8回）は11月ごろを予定しております。会場が決まり次第あらためてご案内いたします。
+
 ご不明な点があれば、いつでもご連絡ください。
 
 ---
@@ -48,3 +50,4 @@ https://hoshihirotaka.github.io/CoderDojoMinamiAizu/?utm_source=doorkeeper&utm_m
 - このDMの読者は「**登録済みだが未参加の人を含む**」（`flyer-review/README.md`）。
   参加への後押しと、不安を解消する情報を厚めにしてある。
   貸出PC・小さめのマウスの記載は、その「不安を解消する情報」として置いている。
+- **第8回の日付（11/15）は出していない。** 会場申請中で未確定のため「11月ごろ」に留めてある。

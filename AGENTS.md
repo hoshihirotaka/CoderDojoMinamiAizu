@@ -25,6 +25,8 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - 第6回（2026-07-26）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/196200`
   - ~~第7回（2026-08-16）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/198352`~~（**中止**。送り盆と重なるため）
   - 第7回（2026-09-27）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199000`（中止分を振り替え。回数は第7回のまま）
+  - 第8回（2026-11-15）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199001`
+    - ⚠️ **2026-08-24時点で未公開・会場申請中。確定していない。** **LPへの掲載・外部への日付告知はしないこと。** 確定後にこの注記を消す
 - LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - DoorkeeperからLP（公式サイト）へのリンクは `utm_source=doorkeeper` ＋ 置き場所別のmedium（イベント本文: `utm_medium=event` / コミュニティ説明: `utm_medium=community`）＋ `utm_campaign=coderdojo`。テキストリンクのみ（バナーにしない）。アンカーテキストは「教室の様子・主催者の紹介は公式サイトへ」のように行き先の内容を書く
 - プロフィール/一覧ページ
