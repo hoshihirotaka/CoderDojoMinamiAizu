@@ -26,7 +26,8 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - ~~第7回（2026-08-16）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/198352`~~（**中止**。送り盆と重なるため）
   - 第7回（2026-09-27）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199000`（中止分を振り替え。回数は第7回のまま）
   - 第8回（2026-11-15）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199001`
-    - ⚠️ **2026-08-24時点で未公開・会場申請中。確定していない。** **LPへの掲載・外部への日付告知はしないこと。** 確定後にこの注記を消す
+    - **日程は確定済み**（会場承認済み）。LPに開催カードを掲載済み、告知文にも日付を記載してよい
+    - ⚠️ **ただしイベントページ自体はまだ未公開で404を返す。** リンクを貼らないこと。公開されたら、LPの第8回カードに申込みボタンを追加する。**その際 `js-apply-button` を必ず付ける**
 - **開催は隔月程度のペース。** 2026年10月は会場と運営の都合により開催しない（意図的な判断であり、日程の漏れではない）
 - LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - DoorkeeperからLP（公式サイト）へのリンクは `utm_source=doorkeeper` ＋ 置き場所別のmedium（イベント本文: `utm_medium=event` / コミュニティ説明: `utm_medium=community`）＋ `utm_campaign=coderdojo`。テキストリンクのみ（バナーにしない）。アンカーテキストは「教室の様子・主催者の紹介は公式サイトへ」のように行き先の内容を書く
@@ -50,7 +51,7 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - **イベント名は変えないこと**（過去データとの連続性）
   - ⚠️ **開催情報を差し替えるときは、申込みボタンに `js-apply-button` を付け直すこと。** 2026-08-06に中止対応でクラスごと外し、8/24まで発火していなかった。クラスが無いとリスナーが1つも付かず、レポート上は「申込0件」と区別が付かない
 - ナビ以外のボタンのクリック計測: `button_click`（`[data-track]`／パラメータ `button` に識別子）
-  - 現在の対象: `hero_schedule` / `hero_join` / `hero_gallery` / `community_register`
+  - 現在の対象: `hero_schedule` / `hero_join` / `hero_gallery` / `upcoming_notify` / `community_register`
   - 追加したいボタンには `data-track` 属性に識別子を入れるだけでよい
 - Doorkeeper側の申込完了計測: `signup_complete`（**Doorkeeper側のプロパティ**／測定ID `G-BWCXQ6HMN7`）
   - GA4の「イベントを作成」で生成。条件は `event_name` = `page_view` かつ `page_location` が正規表現 `/tickets/[^/]+/completed` に一致
