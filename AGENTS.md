@@ -30,6 +30,8 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - 第10回（2027-01-17）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/200415`（2026-11-11に公開。LP掲載・申込みボタン設置済み）
 - **Doorkeeperのイベントページは毎回同じ本文。** 前回のイベントをコピーして、タイトルの回数と日時だけ変える。回ごとの原稿は作らない（本文の控えは `content/doorkeeper-common.md`）
 - **終わった回のカードはLPから外す**（JSON-LDのEventも消す）。申込みボタンの `id="apply-button"` は、残っているうち最も近い回に付け直す（IDは1つだけ）
+  - **自動化済み（2026-11-11〜）**: 毎週火曜9:00に、Claude Codeの定期タスク（`coderdojo-remove-past-events`）が `ruby tools/remove-past-events.rb` を実行し、開催日を過ぎたカードを外して**コミットまで**行う。**pushはしない**ので、通知を見て内容を確認してからpushする
+  - 全部の回が開催済みになった場合は、開催予定が空になるので何もしない（次の日程を先に掲載する）
 - **開催ペース**: 2026年9月までは隔月程度。2026年10月は会場と運営の都合により開催しない（意図的な判断であり、日程の漏れではない）。**11月・12月・1月は月1回**（会場が取れたため）
 - LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - DoorkeeperからLP（公式サイト）へのリンクは `utm_source=doorkeeper` ＋ 置き場所別のmedium（イベント本文: `utm_medium=event` / コミュニティ説明: `utm_medium=community`）＋ `utm_campaign=coderdojo`。テキストリンクのみ（バナーにしない）。アンカーテキストは「教室の様子・主催者の紹介は公式サイトへ」のように行き先の内容を書く
