@@ -26,7 +26,12 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - ~~第7回（2026-08-16）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/198352`~~（**中止**。送り盆と重なるため）
   - 第7回（2026-09-27）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199000`（中止分を振り替え。回数は第7回のまま）
   - 第8回（2026-11-15）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199001`（2026-09-02に公開。LP掲載・申込みボタン設置済み）
-- **開催は隔月程度のペース。** 2026年10月は会場と運営の都合により開催しない（意図的な判断であり、日程の漏れではない）
+  - 第9回（2026-12-13）: **イベントページ未作成**（2026-11-11にホール予約済み。LPには「申込みページ準備中」で掲載）
+  - 第10回（2027-01-17）: **イベントページ未作成**（同上）
+    - 公開されたらLPの「準備中」を申込みボタンに差し替え、`js-apply-button` を付ける
+- **Doorkeeperのイベントページは毎回同じ本文。** 前回のイベントをコピーして、タイトルの回数と日時だけ変える。回ごとの原稿は作らない（本文の控えは `content/doorkeeper-common.md`）
+- **終わった回のカードはLPから外す**（JSON-LDのEventも消す）。申込みボタンの `id="apply-button"` は、残っているうち最も近い回に付け直す（IDは1つだけ）
+- **開催ペース**: 2026年9月までは隔月程度。2026年10月は会場と運営の都合により開催しない（意図的な判断であり、日程の漏れではない）。**11月・12月・1月は月1回**（会場が取れたため）
 - LPからのリンクに付けるutm: `utm_source=lp&utm_medium=referral&utm_campaign=coderdojo`（`utm_medium=paid` は広告専用。LPでは使わない）
 - DoorkeeperからLP（公式サイト）へのリンクは `utm_source=doorkeeper` ＋ 置き場所別のmedium（イベント本文: `utm_medium=event` / コミュニティ説明: `utm_medium=community`）＋ `utm_campaign=coderdojo`。テキストリンクのみ（バナーにしない）。アンカーテキストは「教室の様子・主催者の紹介は公式サイトへ」のように行き先の内容を書く
 - **チラシ（紙）からのリンクに付けるutm**: `utm_source=flyer&utm_medium=print&utm_campaign=coderdojo`
@@ -49,7 +54,7 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - **イベント名は変えないこと**（過去データとの連続性）
   - ⚠️ **開催情報を差し替えるときは、申込みボタンに `js-apply-button` を付け直すこと。** 2026-08-06に中止対応でクラスごと外し、8/24まで発火していなかった。クラスが無いとリスナーが1つも付かず、レポート上は「申込0件」と区別が付かない
 - ナビ以外のボタンのクリック計測: `button_click`（`[data-track]`／パラメータ `button` に識別子）
-  - 現在の対象: `hero_schedule` / `hero_join` / `hero_gallery` / `community_register`
+  - 現在の対象: `hero_schedule` / `hero_join` / `hero_gallery` / `upcoming_notify`（準備中の回の「メンバー登録」ボタン） / `community_register`
   - 追加したいボタンには `data-track` 属性に識別子を入れるだけでよい
 - Doorkeeper側の申込完了計測: `signup_complete`（**Doorkeeper側のプロパティ**／測定ID `G-BWCXQ6HMN7`）
   - GA4の「イベントを作成」で生成。条件は `event_name` = `page_view` かつ `page_location` が正規表現 `/tickets/[^/]+/completed` に一致
