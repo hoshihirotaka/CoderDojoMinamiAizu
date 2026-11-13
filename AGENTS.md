@@ -10,6 +10,22 @@
 - `content/doorkeeper-community.md`: Doorkeeper用のコミュニティ説明文
 - `flyer-review/`: チラシ（画像/PDF）レビュー用の一時フォルダ
 
+## 全体像とこれまでの経緯（はじめに読む）
+活動の始まりから現在までの流れは、まず次のページで把握する。
+
+- **1年の歩み（Notion）**: https://app.notion.com/p/41769091dd6a81b7b309f1b94ee84cf6
+  - 田島プログラミングクラブ（2025年5月〜）からCoderDojo南会津（2025年12月〜）までの全開催回、各回の子どもの人数と出来事、定着したもの、分かったこと、次の一歩
+  - Notionは非公開。読むにはNotionの接続（権限）が必要。2026-11-13時点のまとめなので、それ以降の回は下の一次情報で補う
+- 一次情報（いずれも公開）
+  - **note 活動報告マガジン**: https://note.com/shgame/m/m86c257df6068 （開催のたびに書いている。各回の様子・子どもの人数はここが正）
+  - **Doorkeeper 過去のイベント（CoderDojo南会津）**: https://coderdojo-minamiaizu.doorkeeper.jp/events/past
+  - **Doorkeeper 過去のイベント（田島プログラミングクラブ時代）**: https://14ac3f926acdcfc8fc2c32208b.doorkeeper.jp/events/past
+- ⚠️ **人数の読み方**: Doorkeeperの「参加者数」は**申込の数**（家庭＝組の数）で、子どもの人数ではない。1人の保護者がお子さんを1〜3人連れてくるため、子どもの人数はnoteの活動報告の数を使う
+- **noteの記事を読む方法**: マガジンのページを普通に取得すると記事URLが取れないことがある（2026-11-13にWebFetchでは取れなかった）。次のAPIで記事の一覧と本文が取れる
+  - 記事一覧: `https://note.com/api/v1/layout/magazine/m86c257df6068/section?page=1`（`page=2` 以降も。レスポンス中の `"key":"n..."` が記事ID）
+  - 記事本文: `https://note.com/api/v3/notes/{記事ID}`（`data.name` がタイトル、`data.publish_at` が公開日、`data.body` が本文HTML）
+  - 子どもや保護者の名前を書き写さないこと
+
 ## 2. LPとDoorkeeperの関連付けルール
 LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと** を最優先にします。
 
