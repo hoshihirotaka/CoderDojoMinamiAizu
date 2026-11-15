@@ -69,6 +69,7 @@ summary{font-weight:800;cursor:pointer}
       <button class="small" id="add">＋ マスを追加</button>
       <button class="small" id="reset">最初の内容に戻す</button>
       <button class="small" id="sound">音：オン</button>
+      <button class="small" id="shuffle">並び：毎回ランダム</button>
     </div>
     <p class="note">本物のルーレットに合わせて文字と色を書きかえてください。内容はこの端末に保存されます。</p>
   </details>
@@ -90,6 +91,16 @@ let items, soundOn = true;
 try { items = JSON.parse(localStorage.getItem("ice-roulette-items-v2")) } catch(e) {}
 if (!Array.isArray(items) || !items.length) items = structuredClone(DEFAULT);
 try { soundOn = localStorage.getItem("ice-roulette-sound") !== "off" } catch(e) {}
+let shuffleOn = true;
+try { shuffleOn = localStorage.getItem("ice-roulette-shuffle") !== "off" } catch(e) {}
+// order[i] = 盤面のi番目に置くマスの番号。編集欄の並び（items）はそのまま残す
+let order = [];
+function resetOrder(){
+  order = items.map((_,i)=>i);
+  if (shuffleOn) for (let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [order[i],order[j]]=[order[j],order[i]]; }
+}
+const slot = i => items[order[i]] ?? items[i];
+resetOrder();
 
 const cv = document.getElementById("wheel"), ctx = cv.getContext("2d");
 const resultEl = document.getElementById("result"), spinBtn = document.getElementById("spin");
@@ -106,14 +117,15 @@ function draw(){
   for (let i=0;i<n;i++){
     const a0 = -Math.PI/2 + i*seg;
     ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,R,a0,a0+seg); ctx.closePath();
-    ctx.fillStyle = items[i].c; ctx.fill();
+    const it = slot(i);
+    ctx.fillStyle = it.c; ctx.fill();
     ctx.lineWidth = 6; ctx.strokeStyle = "#14324a"; ctx.stroke();
     ctx.save(); ctx.rotate(a0+seg/2);
-    ctx.fillStyle = textColor(items[i].c);
-    const fs = Math.max(34, Math.min(72, 380/Math.max(4,[...items[i].t].length) * (n<=8?1:0.8)));
+    ctx.fillStyle = textColor(it.c);
+    const fs = Math.max(34, Math.min(72, 380/Math.max(4,[...it.t].length) * (n<=8?1:0.8)));
     ctx.font = `800 ${fs}px "M PLUS Rounded 1c","Hiragino Maru Gothic ProN",sans-serif`;
     ctx.textAlign = "right"; ctx.textBaseline = "middle";
-    ctx.fillText(items[i].t, R-30, 0, R*0.68);
+    ctx.fillText(it.t, R-30, 0, R*0.68);
     ctx.restore();
   }
   ctx.restore();
@@ -149,6 +161,7 @@ function indexAt(a){
 }
 function spin(){
   if (spinning || !items.length) return;
+  if (shuffleOn) { resetOrder(); draw(); }
   spinning = true; spinBtn.disabled = true;
   resultEl.className = "result dim"; resultEl.textContent = "……";
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -163,7 +176,7 @@ function spin(){
     if (k < 1) requestAnimationFrame(step);
     else {
       spinning = false; spinBtn.disabled = false;
-      const it = items[indexAt(angle)];
+      const it = slot(indexAt(angle));
       resultEl.className = "result"; resultEl.textContent = it.t; fanfare();
     }
   }
@@ -181,16 +194,20 @@ function renderRows(){
     c.value = it.c; t.value = it.t;
     c.oninput = ()=>{ it.c = c.value; draw(); save(); };
     t.oninput = ()=>{ it.t = t.value; draw(); save(); };
-    del.onclick = ()=>{ if (items.length<=2) return; items.splice(i,1); save(); renderRows(); draw(); };
+    del.onclick = ()=>{ if (items.length<=2) return; items.splice(i,1); save(); resetOrder(); renderRows(); draw(); };
     box.appendChild(row);
   });
 }
-document.getElementById("add").onclick = ()=>{ items.push({t:"新しいマス", c:"#9be7c4"}); save(); renderRows(); draw(); };
-document.getElementById("reset").onclick = ()=>{ items = structuredClone(DEFAULT); save(); renderRows(); draw(); };
+document.getElementById("add").onclick = ()=>{ items.push({t:"新しいマス", c:"#9be7c4"}); save(); resetOrder(); renderRows(); draw(); };
+document.getElementById("reset").onclick = ()=>{ items = structuredClone(DEFAULT); save(); resetOrder(); renderRows(); draw(); };
 const soundBtn = document.getElementById("sound");
 const syncSound = ()=> soundBtn.textContent = soundOn ? "音：オン" : "音：オフ";
 soundBtn.onclick = ()=>{ soundOn = !soundOn; syncSound(); try{ localStorage.setItem("ice-roulette-sound", soundOn?"on":"off") }catch(e){} };
 syncSound();
+const shuffleBtn = document.getElementById("shuffle");
+const syncShuffle = ()=> shuffleBtn.textContent = shuffleOn ? "並び：毎回ランダム" : "並び：固定";
+shuffleBtn.onclick = ()=>{ shuffleOn = !shuffleOn; syncShuffle(); resetOrder(); draw(); try{ localStorage.setItem("ice-roulette-shuffle", shuffleOn?"on":"off") }catch(e){} };
+syncShuffle();
 
 try{ navigator.wakeLock?.request("screen").catch(()=>{}) }catch(e){}
 renderRows();
