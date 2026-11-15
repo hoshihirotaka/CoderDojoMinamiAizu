@@ -10,6 +10,7 @@
 - `content/doorkeeper-community.md`: Doorkeeper用のコミュニティ説明文
 - `flyer-review/`: チラシ（画像/PDF）レビュー用の一時フォルダ
 - `roulette/`: 教室で使うルーレット（クラッシュアイスゲームの代用。2026-11-15追加）。検索に出さないため `noindex` を付け、`sitemap.xml` には載せない。LPのフッター最下部から `rel="nofollow"` でリンクしている
+- `blocks/`: クラッシュアイスゲームのブロックの並べ方（もようカード。37マスの六角形の盤に青・白を各19こまで。2026-11-15追加）。`roulette/` と同じく noindex・sitemap外・フッターから nofollow
 
 ## 全体像とこれまでの経緯（はじめに読む）
 活動の始まりから現在までの流れは、まず次のページで把握する。
