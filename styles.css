@@ -675,6 +675,14 @@ a {
   color: rgba(234, 242, 241, 0.6);
 }
 
+.footer__note--tools {
+  margin-top: 8px;
+}
+
+.footer__note--tools a {
+  color: inherit;
+}
+
 .list {
   list-style: none;
   display: grid;

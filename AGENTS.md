@@ -9,6 +9,7 @@
 - `content/doorkeeper-common.md`: Doorkeeper用の本文（イベント情報・参加条件・問い合わせなど）
 - `content/doorkeeper-community.md`: Doorkeeper用のコミュニティ説明文
 - `flyer-review/`: チラシ（画像/PDF）レビュー用の一時フォルダ
+- `roulette/`: 教室で使うルーレット（クラッシュアイスゲームの代用。2026-11-15追加）。検索に出さないため `noindex` を付け、`sitemap.xml` には載せない。LPのフッター最下部から `rel="nofollow"` でリンクしている
 
 ## 全体像とこれまでの経緯（はじめに読む）
 活動の始まりから現在までの流れは、まず次のページで把握する。

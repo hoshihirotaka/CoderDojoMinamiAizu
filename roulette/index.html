@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>クラッシュアイス ルーレット</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap">
+<style>
+/* Layout: one screen — big wheel center, result under it, edit drawer below */
+:root{
+  --bg:#eaf4fb; --panel:#ffffff; --fg:#14324a; --muted:#5b7890;
+  --accent:#1f7ac4; --line:#c9dcea; --pointer:#e2463a;
+  --font:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Hiragino Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1b26; --panel:#15293a; --fg:#e4f1fa; --muted:#8fb0c7;
+  --accent:#5fb4f2; --line:#25425a; --pointer:#ff6a5c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1b26; --panel:#15293a; --fg:#e4f1fa; --muted:#8fb0c7;
+  --accent:#5fb4f2; --line:#25425a; --pointer:#ff6a5c; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:16px;box-sizing:border-box}
+main{max-width:560px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px}
+h1{font-size:1.25rem;font-weight:800;margin:0;letter-spacing:.04em;text-wrap:balance}
+.wheel-wrap{position:relative;width:min(92vw,520px,62vh);aspect-ratio:1;max-width:100%}
+canvas{width:100%;height:100%;display:block;cursor:pointer;touch-action:manipulation}
+.pointer{position:absolute;left:50%;top:-6px;transform:translateX(-50%);width:0;height:0;
+  border-left:18px solid transparent;border-right:18px solid transparent;border-top:34px solid var(--pointer);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.25));pointer-events:none}
+.result{min-height:3.2rem;font-size:clamp(1.6rem,7vw,2.4rem);font-weight:800;text-align:center;text-wrap:balance}
+.result.dim{color:var(--muted);font-size:1.1rem;font-weight:500}
+button{font-family:inherit;cursor:pointer}
+.spin{font-size:1.4rem;font-weight:800;padding:14px 56px;border-radius:999px;border:0;
+  background:var(--accent);color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.spin:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.spin:disabled{opacity:.6}
+button:focus-visible,input:focus-visible{outline:3px solid var(--pointer);outline-offset:2px}
+details{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-sizing:border-box}
+summary{font-weight:800;cursor:pointer}
+.rows{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.row{display:flex;gap:8px;align-items:center}
+.row input[type=text]{flex:1;min-width:0;font:inherit;font-size:1rem;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.row input[type=color]{width:44px;height:40px;border:1px solid var(--line);border-radius:8px;padding:2px;background:var(--bg)}
+.small{font-size:.95rem;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.note{color:var(--muted);font-size:.85rem;margin:10px 0 0}
+@media (prefers-reduced-motion: reduce){.spin:active{transform:none}}
+</style>
+</head>
+<body>
+
+<main>
+  <h1>クラッシュアイス ルーレット</h1>
+  <div class="wheel-wrap">
+    <div class="pointer"></div>
+    <canvas id="wheel" width="1040" height="1040" aria-label="ルーレット。タップで回す"></canvas>
+  </div>
+  <div id="result" class="result dim">ボタンかルーレットをタップして回してね</div>
+  <button id="spin" class="spin">まわす</button>
+
+  <details id="editor">
+    <summary>マスを編集する</summary>
+    <div class="rows" id="rows"></div>
+    <div class="tools">
+      <button class="small" id="add">＋ マスを追加</button>
+      <button class="small" id="reset">最初の内容に戻す</button>
+      <button class="small" id="sound">音：オン</button>
+    </div>
+    <p class="note">本物のルーレットに合わせて文字と色を書きかえてください。内容はこの端末に保存されます。</p>
+  </details>
+</main>
+
+<script>
+const DEFAULT = [
+  {t:"青 1こ", c:"#2f7fd6"},
+  {t:"白 1こ", c:"#f4f8fb"},
+  {t:"水色 1こ", c:"#8fd3f4"},
+  {t:"青 2こ", c:"#1d5fae"},
+  {t:"白 2こ", c:"#dfe9f1"},
+  {t:"すきなの 1こ", c:"#f2c94c"},
+];
+let items, soundOn = true;
+try { items = JSON.parse(localStorage.getItem("ice-roulette-items")) } catch(e) {}
+if (!Array.isArray(items) || !items.length) items = structuredClone(DEFAULT);
+try { soundOn = localStorage.getItem("ice-roulette-sound") !== "off" } catch(e) {}
+
+const cv = document.getElementById("wheel"), ctx = cv.getContext("2d");
+const resultEl = document.getElementById("result"), spinBtn = document.getElementById("spin");
+let angle = 0, spinning = false;
+
+function textColor(hex){
+  const n = parseInt(hex.slice(1),16), r=n>>16, g=(n>>8)&255, b=n&255;
+  return (r*299+g*587+b*114)/1000 > 150 ? "#14324a" : "#ffffff";
+}
+function draw(){
+  const W = cv.width, R = W/2 - 12, cx = W/2, cy = W/2, n = items.length, seg = Math.PI*2/n;
+  ctx.clearRect(0,0,W,W);
+  ctx.save(); ctx.translate(cx,cy); ctx.rotate(angle);
+  for (let i=0;i<n;i++){
+    const a0 = -Math.PI/2 + i*seg;
+    ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,R,a0,a0+seg); ctx.closePath();
+    ctx.fillStyle = items[i].c; ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = "#14324a"; ctx.stroke();
+    ctx.save(); ctx.rotate(a0+seg/2);
+    ctx.fillStyle = textColor(items[i].c);
+    const fs = Math.max(34, Math.min(72, 380/Math.max(4,[...items[i].t].length) * (n<=8?1:0.8)));
+    ctx.font = `800 ${fs}px "M PLUS Rounded 1c","Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    ctx.fillText(items[i].t, R-30, 0, R*0.68);
+    ctx.restore();
+  }
+  ctx.restore();
+  ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.lineWidth=14; ctx.strokeStyle="#14324a"; ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx,cy,56,0,Math.PI*2); ctx.fillStyle="#ffffff"; ctx.fill(); ctx.lineWidth=8; ctx.stroke();
+}
+
+let ac;
+function tick(){
+  if (!soundOn) return;
+  try{
+    ac = ac || new (window.AudioContext||window.webkitAudioContext)();
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.frequency.value = 1100; o.type = "square";
+    g.gain.setValueAtTime(.08, ac.currentTime); g.gain.exponentialRampToValueAtTime(.0001, ac.currentTime+.04);
+    o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime+.05);
+  }catch(e){}
+}
+function fanfare(){
+  if (!soundOn || !ac) return;
+  [660,880,1320].forEach((f,i)=>{
+    const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime + i*.12;
+    o.frequency.value = f; o.type="triangle";
+    g.gain.setValueAtTime(.15,t); g.gain.exponentialRampToValueAtTime(.0001,t+.25);
+    o.connect(g).connect(ac.destination); o.start(t); o.stop(t+.3);
+  });
+}
+
+function indexAt(a){
+  const n = items.length, seg = Math.PI*2/n;
+  const p = ((-a) % (Math.PI*2) + Math.PI*2) % (Math.PI*2);
+  return Math.floor(p/seg) % n;
+}
+function spin(){
+  if (spinning || !items.length) return;
+  spinning = true; spinBtn.disabled = true;
+  resultEl.className = "result dim"; resultEl.textContent = "……";
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const start = angle, total = (reduce?1:5 + Math.random()*3) * Math.PI*2 + Math.random()*Math.PI*2;
+  const dur = reduce ? 600 : 4200 + Math.random()*1200, t0 = performance.now();
+  let last = indexAt(start);
+  tick();
+  function step(now){
+    const k = Math.min(1,(now-t0)/dur), e = 1 - Math.pow(1-k,4);
+    angle = start + total*e; draw();
+    const idx = indexAt(angle); if (idx !== last){ last = idx; tick(); }
+    if (k < 1) requestAnimationFrame(step);
+    else {
+      spinning = false; spinBtn.disabled = false;
+      const it = items[indexAt(angle)];
+      resultEl.className = "result"; resultEl.textContent = it.t; fanfare();
+    }
+  }
+  requestAnimationFrame(step);
+}
+spinBtn.onclick = spin; cv.onclick = spin;
+
+function save(){ try{ localStorage.setItem("ice-roulette-items", JSON.stringify(items)) }catch(e){} }
+function renderRows(){
+  const box = document.getElementById("rows"); box.innerHTML = "";
+  items.forEach((it,i)=>{
+    const row = document.createElement("div"); row.className="row";
+    row.innerHTML = `<input type="color" id="c${i}" aria-label="${i+1}番目の色"><input type="text" id="t${i}" aria-label="${i+1}番目の文字"><button class="small" aria-label="${i+1}番目を削除">✕</button>`;
+    const [c,t,del] = row.children;
+    c.value = it.c; t.value = it.t;
+    c.oninput = ()=>{ it.c = c.value; draw(); save(); };
+    t.oninput = ()=>{ it.t = t.value; draw(); save(); };
+    del.onclick = ()=>{ if (items.length<=2) return; items.splice(i,1); save(); renderRows(); draw(); };
+    box.appendChild(row);
+  });
+}
+document.getElementById("add").onclick = ()=>{ items.push({t:"新しいマス", c:"#9be7c4"}); save(); renderRows(); draw(); };
+document.getElementById("reset").onclick = ()=>{ items = structuredClone(DEFAULT); save(); renderRows(); draw(); };
+const soundBtn = document.getElementById("sound");
+const syncSound = ()=> soundBtn.textContent = soundOn ? "音：オン" : "音：オフ";
+soundBtn.onclick = ()=>{ soundOn = !soundOn; syncSound(); try{ localStorage.setItem("ice-roulette-sound", soundOn?"on":"off") }catch(e){} };
+syncSound();
+
+try{ navigator.wakeLock?.request("screen").catch(()=>{}) }catch(e){}
+renderRows();
+document.fonts?.ready.then(draw); draw();
+</script>
+</body>
+</html>
