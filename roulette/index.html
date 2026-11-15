@@ -76,15 +76,18 @@ summary{font-weight:800;cursor:pointer}
 
 <script>
 const DEFAULT = [
+  {t:"おやすみ", c:"#8a96a3"},
+  {t:"リバース", c:"#e2463a"},
   {t:"青 1こ", c:"#2f7fd6"},
   {t:"白 1こ", c:"#f4f8fb"},
-  {t:"水色 1こ", c:"#8fd3f4"},
   {t:"青 2こ", c:"#1d5fae"},
   {t:"白 2こ", c:"#dfe9f1"},
-  {t:"すきなの 1こ", c:"#f2c94c"},
+  {t:"青か白 1こ", c:"#8fd3f4"},
+  {t:"白2こ 青1こ", c:"#f2c94c"},
+  {t:"青2こ 白1こ", c:"#9be7c4"},
 ];
 let items, soundOn = true;
-try { items = JSON.parse(localStorage.getItem("ice-roulette-items")) } catch(e) {}
+try { items = JSON.parse(localStorage.getItem("ice-roulette-items-v2")) } catch(e) {}
 if (!Array.isArray(items) || !items.length) items = structuredClone(DEFAULT);
 try { soundOn = localStorage.getItem("ice-roulette-sound") !== "off" } catch(e) {}
 
@@ -168,7 +171,7 @@ function spin(){
 }
 spinBtn.onclick = spin; cv.onclick = spin;
 
-function save(){ try{ localStorage.setItem("ice-roulette-items", JSON.stringify(items)) }catch(e){} }
+function save(){ try{ localStorage.setItem("ice-roulette-items-v2", JSON.stringify(items)) }catch(e){} }
 function renderRows(){
   const box = document.getElementById("rows"); box.innerHTML = "";
   items.forEach((it,i)=>{
