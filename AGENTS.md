@@ -43,7 +43,7 @@ LPとDoorkeeperの内容は **同じ方針・同じ条件がズレないこと**
   - 第6回（2026-07-26）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/196200`
   - ~~第7回（2026-08-16）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/198352`~~（**中止**。送り盆と重なるため）
   - 第7回（2026-09-27）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199000`（中止分を振り替え。回数は第7回のまま）
-  - 第8回（2026-11-15）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199001`（2026-09-02に公開。LP掲載・申込みボタン設置済み）
+  - 第8回（2026-11-15）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/199001`（2026-09-02に公開。開催済み。2026-11-17にLPから外した）
   - 第9回（2026-12-13）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/200414`（2026-11-11に公開。LP掲載・申込みボタン設置済み）
   - 第10回（2027-01-17）: `https://coderdojo-minamiaizu.doorkeeper.jp/events/200415`（2026-11-11に公開。LP掲載・申込みボタン設置済み）
 - **Doorkeeperのイベントページは毎回同じ本文。** 前回のイベントをコピーして、タイトルの回数と日時だけ変える。回ごとの原稿は作らない（本文の控えは `content/doorkeeper-common.md`）
